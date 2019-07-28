@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NCCS Forum - Login</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootsrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="/static/css/ncssblog.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="nav-scroller py-1 mb-2">
+        {% include "nav.html" %}
+      </div>
+    </div>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-mb-4 align-content-center">
+            <h3>Sign In</h3>
+            {% if error_msg %}
+                <div class="alert alert-danger">{{ error_msg }}</div>
+            {% endif %}
+            {% if success_msg %}
+                <div class="alert alert-success">{{ success_msg }}</div>
+            {% endif %}
+            <form method="post" action="/account/signin/" enctype="multipart/form-data"  class="align-content-center">
+                 {% csrf_token %}
+                <table style="width: 600px;">
+
+                    <tr>
+                        <td><label for="txtEmail">Email</label></td>
+                        <td><input type="email" value="{% if user_register %}{{ user_register.user.email }}{% endif %}"  name="txtEmail" id="txtEmail"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtPassword">Password</label></td>
+                        <td><input type="password" name="txtPassword" id="txtPassword"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <input type="submit" value="Sign In">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+      </div><!-- /.row -->
+    </main><!-- /.container -->
+
+    <footer class="blog-footer">
+
+    </footer>
+  </body>
+</html>

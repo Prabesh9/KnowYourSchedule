@@ -1,0 +1,13 @@
+<nav class="nav d-flex justify-content-between">
+    <a class="p-2 text-muted" href="/">Home</a>
+    <a class="p-2 text-muted" href="#">Database</a>
+    <a class="p-2 text-muted" href="#">Design</a>
+    {% if login_user is not None %}
+        <a class="p-2 text-muted" href="/forum/new/">Write Forum</a>
+        <a class="p-2 text-muted" href="#">{{ login_user.full_name }}</a>
+        <a class="p-2 text-muted" href="/account/signout/">Logout</a>
+    {% else %}
+        <a class="p-2 text-muted" href="/account/signup">Sign Up</a>
+        <a class="p-2 text-muted" href="/account/signin">Sign In</a>
+    {% endif %}
+</nav>
