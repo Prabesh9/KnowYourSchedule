@@ -54,7 +54,7 @@ ROOT_URLCONF = 'KnowYourSchedule.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['ui'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
