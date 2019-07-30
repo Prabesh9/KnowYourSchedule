@@ -1,0 +1,38 @@
+.logo-login {
+  max-height: 300px;
+  padding: 0px;
+  margin-left: -100px;
+  margin-top: -50px;
+}
+
+.logo-nav {
+  max-height: 60px;
+  display: inline-block;
+  margin-left: -40px;
+  margin-right: -20px;
+  margin-top: -25px;
+  margin-bottom: -20px;
+}
+
+.login-clean {
+  /*background-image: url("wall.png");*/
+  /*opacity: 0.8;*/
+}
+
+.features-clean {
+  position: relative;
+}
+
+.div-back {
+  /*position: absolute;*/
+  /*z-index: -1;*/
+  background-image: url(wall.png);
+  height: inherit;
+  width: inherit;
+  opacity: 0.9;
+}
+
+.login-text {
+  text-transform: uppercase;
+}
+
