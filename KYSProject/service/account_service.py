@@ -1,14 +1,14 @@
-from KnowYourSchedule.repo import teacher_repo
-from service.service import Service
-from utils import generate_uuid, timestamp, password_hash, password_verify
 import traceback
+
+from KYSProject.service.service import Service
+from KYSProject.repo.teacher_repo import TeacherRepo
 
 
 class AccountService(Service):
 
     def signin(self, email, password):
         try:
-            use_repo = teacher_repo()
+            use_repo = TeacherRepo()
             user_detail = use_repo.signin(email)
             if user_detail is None:
                 return None

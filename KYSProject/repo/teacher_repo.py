@@ -2,7 +2,7 @@ import traceback
 
 from django.db import connection
 
-from KnowYourSchedule.model.Teacher import Teacher
+from KYSProject.model.Teacher import Teacher
 
 
 class TeacherRepo(object):
@@ -18,9 +18,9 @@ class TeacherRepo(object):
                 else:
                     teacher = Teacher()
                     teacher.teacher_id = row[0]
-                    teacher.full_name = row[1]
-                    teacher.email = row[3]
-                    return {"user": teacher, "password": row[4]}
+                    teacher.first_name = row[1]
+                    teacher.email = row[2]
+                    return {"user": teacher, "password": row[3]}
         except Exception:
             traceback.print_exc()
             return None

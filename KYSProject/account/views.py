@@ -3,9 +3,8 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.template import loader
 
-from KnowYourSchedule.model.Teacher import Teacher
-from service.account_service import AccountService
 # Create your views here.
+from KYSProject.service.account_service import AccountService
 
 
 def signin(request):
@@ -24,7 +23,7 @@ def signin(request):
             else:
                 request.session["login_user"] = user
                 context["success_msg"] = "Login successful."
-                return redirect("index")
+                return redirect("admindashboard")
     return HttpResponse(signup_html_page.render(context, request))
 
 
